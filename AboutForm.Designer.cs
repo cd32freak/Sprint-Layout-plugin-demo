@@ -38,7 +38,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(105, 222);
+            this.btnOK.Location = new System.Drawing.Point(135, 226);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 0;
@@ -49,7 +49,7 @@
             // lblCopyright
             // 
             this.lblCopyright.AutoSize = true;
-            this.lblCopyright.Location = new System.Drawing.Point(24, 194);
+            this.lblCopyright.Location = new System.Drawing.Point(31, 199);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(217, 13);
             this.lblCopyright.TabIndex = 1;
@@ -58,18 +58,19 @@
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
-            this.lblVersion.Location = new System.Drawing.Point(24, 171);
+            this.lblVersion.Location = new System.Drawing.Point(31, 176);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(60, 13);
             this.lblVersion.TabIndex = 2;
-            this.lblVersion.Text = "Version 1.0";
+            this.lblVersion.Text = "Version 1.1";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(27, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(261, 142);
+            this.pictureBox1.Size = new System.Drawing.Size(288, 156);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -77,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 254);
+            this.ClientSize = new System.Drawing.Size(358, 261);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.lblCopyright);

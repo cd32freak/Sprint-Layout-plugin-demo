@@ -71,6 +71,12 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.grpBoard = new System.Windows.Forms.GroupBox();
             this.grpOrigin = new System.Windows.Forms.GroupBox();
+            this.grpSearchReplace = new System.Windows.Forms.GroupBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtReplace = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnReplace = new System.Windows.Forms.Button();
+            this.btnReplaceAll = new System.Windows.Forms.Button();
             this.grpGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpContent.SuspendLayout();
@@ -80,6 +86,7 @@
             this.statusStrip1.SuspendLayout();
             this.grpBoard.SuspendLayout();
             this.grpOrigin.SuspendLayout();
+            this.grpSearchReplace.SuspendLayout();
             this.SuspendLayout();
             // 
             // rtbDebug
@@ -533,11 +540,70 @@
             this.grpOrigin.TabStop = false;
             this.grpOrigin.Text = "Origin";
             // 
+            // grpSearchReplace
+            // 
+            this.grpSearchReplace.Controls.Add(this.btnReplaceAll);
+            this.grpSearchReplace.Controls.Add(this.btnReplace);
+            this.grpSearchReplace.Controls.Add(this.btnSearch);
+            this.grpSearchReplace.Controls.Add(this.txtReplace);
+            this.grpSearchReplace.Controls.Add(this.txtSearch);
+            this.grpSearchReplace.Location = new System.Drawing.Point(245, 603);
+            this.grpSearchReplace.Name = "grpSearchReplace";
+            this.grpSearchReplace.Size = new System.Drawing.Size(380, 83);
+            this.grpSearchReplace.TabIndex = 34;
+            this.grpSearchReplace.TabStop = false;
+            this.grpSearchReplace.Text = "Search and replace";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(6, 19);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(196, 20);
+            this.txtSearch.TabIndex = 0;
+            // 
+            // txtReplace
+            // 
+            this.txtReplace.Location = new System.Drawing.Point(6, 49);
+            this.txtReplace.Name = "txtReplace";
+            this.txtReplace.Size = new System.Drawing.Size(196, 20);
+            this.txtReplace.TabIndex = 1;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(208, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnReplace
+            // 
+            this.btnReplace.Location = new System.Drawing.Point(208, 48);
+            this.btnReplace.Name = "btnReplace";
+            this.btnReplace.Size = new System.Drawing.Size(75, 23);
+            this.btnReplace.TabIndex = 3;
+            this.btnReplace.Text = "Replace";
+            this.btnReplace.UseVisualStyleBackColor = true;
+            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
+            // 
+            // btnReplaceAll
+            // 
+            this.btnReplaceAll.Location = new System.Drawing.Point(289, 48);
+            this.btnReplaceAll.Name = "btnReplaceAll";
+            this.btnReplaceAll.Size = new System.Drawing.Size(75, 23);
+            this.btnReplaceAll.TabIndex = 4;
+            this.btnReplaceAll.Text = "Replace All";
+            this.btnReplaceAll.UseVisualStyleBackColor = true;
+            this.btnReplaceAll.Click += new System.EventHandler(this.btnReplaceAll_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 716);
+            this.Controls.Add(this.grpSearchReplace);
             this.Controls.Add(this.grpOrigin);
             this.Controls.Add(this.grpBoard);
             this.Controls.Add(this.label1);
@@ -576,6 +642,8 @@
             this.grpBoard.PerformLayout();
             this.grpOrigin.ResumeLayout(false);
             this.grpOrigin.PerformLayout();
+            this.grpSearchReplace.ResumeLayout(false);
+            this.grpSearchReplace.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,6 +693,12 @@
         private System.Windows.Forms.GroupBox grpBoard;
         private System.Windows.Forms.GroupBox grpOrigin;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox grpSearchReplace;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnReplace;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtReplace;
+        private System.Windows.Forms.Button btnReplaceAll;
     }
 }
 

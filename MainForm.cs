@@ -172,6 +172,7 @@ namespace SprintLayoutPluginDemo
 
                     // Update the txtPath TextBox with the selected file path
                     txtPath.Text = filePath;
+
                 }
                 else
                 {
@@ -321,6 +322,74 @@ namespace SprintLayoutPluginDemo
             //        MessageBox.Show($"Error loading file: {ex.Message}", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //    }
             //}
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchText();
+        }
+
+        private void btnReplace_Click(object sender, EventArgs e)
+        {
+            ReplaceText();
+        }
+
+        private void btnReplaceAll_Click(object sender, EventArgs e)
+        {
+            ReplaceAllText();
+        }
+
+        private void SearchText()
+        {
+            string searchText = txtSearch.Text;
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                int index = rtbFileContent.Find(searchText, rtbFileContent.SelectionStart + rtbFileContent.SelectionLength, RichTextBoxFinds.None);
+
+                if (index != -1)
+                {
+                    rtbFileContent.SelectionStart = index;
+                    rtbFileContent.SelectionLength = searchText.Length;
+                    rtbFileContent.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Text not found.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void ReplaceText()
+        {
+            string searchText = txtSearch.Text;
+            string replaceText = txtReplace.Text;
+
+            if (!string.IsNullOrEmpty(searchText) && rtbFileContent.SelectionLength > 0)
+            {
+                rtbFileContent.SelectedText = replaceText;
+            }
+
+            SearchText();
+        }
+
+        private void ReplaceAllText()
+        {
+            string searchText = txtSearch.Text;
+            string replaceText = txtReplace.Text;
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                int index = rtbFileContent.Find(searchText, 0, RichTextBoxFinds.None);
+
+                while (index != -1)
+                {
+                    rtbFileContent.SelectionStart = index;
+                    rtbFileContent.SelectionLength = searchText.Length;
+                    rtbFileContent.SelectedText = replaceText;
+                    index = rtbFileContent.Find(searchText, index + replaceText.Length, RichTextBoxFinds.None);
+                }
+            }
         }
     }
 }
