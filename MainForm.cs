@@ -9,7 +9,9 @@ namespace SprintLayoutPluginDemo
     public partial class MainForm : Form
     {
         // Dictionary to store descriptions for automatic groundplane values
-        private Dictionary<int, string> automaticGroundplaneDescriptions = new Dictionary<int, string>();
+        //private Dictionary<int, string> automaticGroundplaneDescriptions = new Dictionary<int, string>();
+
+        Dictionary<int, string> automaticGroundplaneDescriptions = new Dictionary<int, string>();
 
         // Flag to track whether the "/A" parameter was encountered
         private bool isBoardTransferred = false; // Track whether "/A" was encountered
@@ -23,22 +25,52 @@ namespace SprintLayoutPluginDemo
             InitializeComponent();
 
             // Initialize the dictionary with descriptions
-            InitializeDescriptions();
+            //InitializeDescriptions();
 
             // Process the actual command line arguments
             ProcessParameters(args);
         }
 
         // Initialize descriptions for automatic groundplane values
-        private void InitializeDescriptions()
+        //private void InitializeDescriptions()
+        //{
+        //    // Map values to descriptions for the /M parameter
+        //    automaticGroundplaneDescriptions.Add(0, "No Automatic Groundplane, No Multilayer board");
+        //    automaticGroundplaneDescriptions.Add(2, "Automatic Groundplane C2, No Multilayer board");
+        //    automaticGroundplaneDescriptions.Add(3, "Automatic Groundplane C1 and C2, No Multilayer board");
+        //    automaticGroundplaneDescriptions.Add(16, "No Automatic Groundplane, Multilayer board");
+        //    automaticGroundplaneDescriptions.Add(20, "Automatic Groundplane I1, Multilayer board");
+        //    automaticGroundplaneDescriptions.Add(31, "Automatic Groundplane C1, C2, I1, and I2, Multilayer board");
+        //    // Add more descriptions as needed
+        //}
+
+        private static string GetAutomaticGroundplaneDescription(int mValue)
         {
-            // Map values to descriptions for the /M parameter
-            automaticGroundplaneDescriptions.Add(0, "No Automatic Groundplane, No Multilayer board");
-            automaticGroundplaneDescriptions.Add(2, "Automatic Groundplane C2, No Multilayer board");
-            automaticGroundplaneDescriptions.Add(3, "Automatic Groundplane C1 and C2, No Multilayer board");
-            automaticGroundplaneDescriptions.Add(16, "No Automatic Groundplane, Multilayer board");
-            automaticGroundplaneDescriptions.Add(31, "Automatic Groundplane C1, C2, I1, and I2, Multilayer board");
-            // Add more descriptions as needed
+            bool c1 = (mValue & (1 << 0)) != 0;
+            bool c2 = (mValue & (1 << 1)) != 0;
+            bool i1 = (mValue & (1 << 2)) != 0;
+            bool i2 = (mValue & (1 << 3)) != 0;
+            bool multilayer = (mValue & (1 << 4)) != 0;
+
+            List<string> planes = new List<string>();
+            if (c1) planes.Add("C1");
+            if (c2) planes.Add("C2");
+            if (i1) planes.Add("I1");
+            if (i2) planes.Add("I2");
+
+            string description;
+            if (planes.Count == 0)
+            {
+                description = "No Automatic Groundplane";
+            }
+            else
+            {
+                description = "Automatic Groundplane " + string.Join(", ", planes);
+            }
+
+            description += multilayer ? ", Multilayer board" : ", No Multilayer board";
+
+            return description;
         }
 
         // Process command line parameters
@@ -54,7 +86,7 @@ namespace SprintLayoutPluginDemo
                 // Split the argument into parameter and value
                 string[] parts = arg.Split(':');
 
-                txtPath.Text = args[0];
+                txtTempfile.Text = args[0];
 
                 if (parts.Length == 2 || parts.Length == 1)
                 {
@@ -98,10 +130,21 @@ namespace SprintLayoutPluginDemo
                             }
                             break;
 
+                        //case "/M":
+                        //    if (int.TryParse(value, out int mValue) && automaticGroundplaneDescriptions.ContainsKey(mValue))
+                        //    {
+                        //        toolStripStatusLabel2.Text = automaticGroundplaneDescriptions[mValue];
+                        //    }
+                        //    else
+                        //    {
+                        //        toolStripStatusLabel2.Text = "Invalid /M value";
+                        //    }
+                        //    break;
+
                         case "/M":
-                            if (int.TryParse(value, out int mValue) && automaticGroundplaneDescriptions.ContainsKey(mValue))
+                            if (int.TryParse(value, out int mValue) && mValue >= 0 && mValue <= 31)
                             {
-                                toolStripStatusLabel2.Text = automaticGroundplaneDescriptions[mValue];
+                                toolStripStatusLabel2.Text = GetAutomaticGroundplaneDescription(mValue);
                             }
                             else
                             {
@@ -171,7 +214,7 @@ namespace SprintLayoutPluginDemo
                     rtbFileContent.Text = fileContent;
 
                     // Update the txtPath TextBox with the selected file path
-                    txtPath.Text = filePath;
+                    txtTempfile.Text = filePath;
 
                 }
                 else
@@ -217,7 +260,7 @@ namespace SprintLayoutPluginDemo
             string richTextBoxContent = rtbFileContent.Text;
 
             // Get the file path of txtPath Tex tBox
-            string filePath = txtPath.Text;
+            string filePath = txtTempfile.Text;
 
             // Save the content to the output file
             SaveToOutputFile(filePath, richTextBoxContent);
@@ -274,7 +317,7 @@ namespace SprintLayoutPluginDemo
             string richTextBoxContent = rtbFileContent.Text;
 
             // Get the file path of txtPath TextBox
-            string filePath = txtPath.Text;
+            string filePath = txtTempfile.Text;
 
             // Save the content to the output file
             SaveToOutputFile(filePath, richTextBoxContent);
@@ -291,37 +334,37 @@ namespace SprintLayoutPluginDemo
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //// Create an instance of OpenFileDialog
-            //OpenFileDialog openFileDialog = new OpenFileDialog();
+            // Create an instance of OpenFileDialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            //// Set the initial directory (optional)
-            //openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            // Set the initial directory (optional)
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-            //// Set the filter for the file dialog (you can customize this based on the file types you want to allow)
-            //openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            // Set the filter for the file dialog (you can customize this based on the file types you want to allow)
+            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
 
-            //// Show the file dialog and check if the user clicked OK
-            //if (openFileDialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    // Get the selected file path
-            //    string filePath = openFileDialog.FileName;
+            // Show the file dialog and check if the user clicked OK
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Get the selected file path
+                string filePath = openFileDialog.FileName;
 
-            //    try
-            //    {
-            //        // Read the content of the selected file
-            //        string fileContent = File.ReadAllText(filePath);
+                try
+                {
+                    // Read the content of the selected file
+                    string fileContent = File.ReadAllText(filePath);
 
-            //        // Display the content in the rtbFileContent RichTextBox
-            //        rtbFileContent.Text = fileContent;
+                    // Display the content in the rtbFileContent RichTextBox
+                    rtbFileContent.Text = fileContent;
 
-            //        // Optionally, update the txtPath TextBox with the selected file path
-            //        txtPath.Text = filePath;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show($"Error loading file: {ex.Message}", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //}
+                    // Optionally, update the txtPath TextBox with the selected file path
+                    txtInputFilename.Text = filePath;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading file: {ex.Message}", "Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

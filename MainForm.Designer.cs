@@ -38,8 +38,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtProcessID = new System.Windows.Forms.TextBox();
-            this.txtPath = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.txtTempfile = new System.Windows.Forms.TextBox();
+            this.lblTempFilename = new System.Windows.Forms.Label();
             this.rtbFileContent = new System.Windows.Forms.RichTextBox();
             this.grpGrid = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -72,11 +72,13 @@
             this.grpBoard = new System.Windows.Forms.GroupBox();
             this.grpOrigin = new System.Windows.Forms.GroupBox();
             this.grpSearchReplace = new System.Windows.Forms.GroupBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.txtReplace = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnReplace = new System.Windows.Forms.Button();
             this.btnReplaceAll = new System.Windows.Forms.Button();
+            this.btnReplace = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtReplace = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtInputFilename = new System.Windows.Forms.TextBox();
+            this.lblInputFilename = new System.Windows.Forms.Label();
             this.grpGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpContent.SuspendLayout();
@@ -91,8 +93,7 @@
             // 
             // rtbDebug
             // 
-            this.rtbDebug.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.rtbDebug.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rtbDebug.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbDebug.Location = new System.Drawing.Point(9, 19);
             this.rtbDebug.Name = "rtbDebug";
@@ -102,17 +103,19 @@
             // 
             // txtLanguage
             // 
+            this.txtLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLanguage.Location = new System.Drawing.Point(603, 130);
+            this.txtLanguage.Location = new System.Drawing.Point(603, 163);
             this.txtLanguage.Name = "txtLanguage";
             this.txtLanguage.Size = new System.Drawing.Size(26, 20);
             this.txtLanguage.TabIndex = 21;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(536, 134);
+            this.label1.Location = new System.Drawing.Point(536, 167);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 2;
@@ -140,6 +143,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(6, 47);
@@ -150,6 +154,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 23);
@@ -160,9 +165,10 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(536, 167);
+            this.label9.Location = new System.Drawing.Point(536, 192);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 13);
             this.label9.TabIndex = 18;
@@ -170,31 +176,32 @@
             // 
             // txtProcessID
             // 
+            this.txtProcessID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtProcessID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProcessID.Location = new System.Drawing.Point(603, 163);
+            this.txtProcessID.Location = new System.Drawing.Point(603, 188);
             this.txtProcessID.Name = "txtProcessID";
             this.txtProcessID.Size = new System.Drawing.Size(50, 20);
             this.txtProcessID.TabIndex = 17;
             this.txtProcessID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtPath
+            // txtTempfile
             // 
-            this.txtPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPath.Location = new System.Drawing.Point(70, 41);
-            this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(583, 20);
-            this.txtPath.TabIndex = 19;
+            this.txtTempfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtTempfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTempfile.Location = new System.Drawing.Point(96, 41);
+            this.txtTempfile.Name = "txtTempfile";
+            this.txtTempfile.Size = new System.Drawing.Size(557, 20);
+            this.txtTempfile.TabIndex = 19;
             // 
-            // label10
+            // lblTempFilename
             // 
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(16, 45);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 13);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Input file:";
+            this.lblTempFilename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTempFilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTempFilename.Location = new System.Drawing.Point(16, 45);
+            this.lblTempFilename.Name = "lblTempFilename";
+            this.lblTempFilename.Size = new System.Drawing.Size(80, 13);
+            this.lblTempFilename.TabIndex = 20;
+            this.lblTempFilename.Text = "Temp filename:";
             // 
             // rtbFileContent
             // 
@@ -204,17 +211,18 @@
             this.rtbFileContent.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbFileContent.Location = new System.Drawing.Point(3, 16);
             this.rtbFileContent.Name = "rtbFileContent";
-            this.rtbFileContent.Size = new System.Drawing.Size(904, 307);
+            this.rtbFileContent.Size = new System.Drawing.Size(638, 286);
             this.rtbFileContent.TabIndex = 0;
             this.rtbFileContent.Text = "";
             // 
             // grpGrid
             // 
+            this.grpGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.grpGrid.Controls.Add(this.pictureBox1);
             this.grpGrid.Controls.Add(this.label11);
             this.grpGrid.Controls.Add(this.txtGridSettingmm);
             this.grpGrid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpGrid.Location = new System.Drawing.Point(535, 72);
+            this.grpGrid.Location = new System.Drawing.Point(535, 105);
             this.grpGrid.Name = "grpGrid";
             this.grpGrid.Size = new System.Drawing.Size(121, 57);
             this.grpGrid.TabIndex = 24;
@@ -264,6 +272,7 @@
             // 
             // txtOriginYmm
             // 
+            this.txtOriginYmm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtOriginYmm.BackColor = System.Drawing.Color.Black;
             this.txtOriginYmm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOriginYmm.ForeColor = System.Drawing.Color.Yellow;
@@ -285,6 +294,7 @@
             // 
             // txtOriginXmm
             // 
+            this.txtOriginXmm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtOriginXmm.BackColor = System.Drawing.Color.Black;
             this.txtOriginXmm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOriginXmm.ForeColor = System.Drawing.Color.Yellow;
@@ -338,8 +348,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(848, 663);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSave.Location = new System.Drawing.Point(138, 686);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 22;
@@ -350,7 +360,7 @@
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancel.Location = new System.Drawing.Point(10, 663);
+            this.btnCancel.Location = new System.Drawing.Point(9, 686);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 26;
@@ -360,23 +370,22 @@
             // 
             // grpContent
             // 
-            this.grpContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpContent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.grpContent.Controls.Add(this.rtbFileContent);
             this.grpContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpContent.Location = new System.Drawing.Point(10, 273);
+            this.grpContent.Location = new System.Drawing.Point(10, 312);
             this.grpContent.Name = "grpContent";
-            this.grpContent.Size = new System.Drawing.Size(913, 321);
+            this.grpContent.Size = new System.Drawing.Size(648, 302);
             this.grpContent.TabIndex = 0;
             this.grpContent.TabStop = false;
             this.grpContent.Text = "Content";
             // 
             // grpDebug
             // 
+            this.grpDebug.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.grpDebug.Controls.Add(this.rtbDebug);
             this.grpDebug.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpDebug.Location = new System.Drawing.Point(10, 72);
+            this.grpDebug.Location = new System.Drawing.Point(10, 104);
             this.grpDebug.Name = "grpDebug";
             this.grpDebug.Size = new System.Drawing.Size(372, 195);
             this.grpDebug.TabIndex = 28;
@@ -405,7 +414,7 @@
             this.grpExitCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.grpExitCode.Controls.Add(this.cmbExitCodes);
             this.grpExitCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpExitCode.Location = new System.Drawing.Point(10, 602);
+            this.grpExitCode.Location = new System.Drawing.Point(0, 630);
             this.grpExitCode.Name = "grpExitCode";
             this.grpExitCode.Size = new System.Drawing.Size(217, 55);
             this.grpExitCode.TabIndex = 30;
@@ -423,7 +432,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(931, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(666, 24);
             this.menuStrip1.TabIndex = 31;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -439,7 +448,6 @@
             // 
             // loadToolStripMenuItem
             // 
-            this.loadToolStripMenuItem.Enabled = false;
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
             this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.loadToolStripMenuItem.Text = "Load";
@@ -479,9 +487,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 694);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 716);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(931, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(666, 22);
             this.statusStrip1.TabIndex = 32;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -493,8 +501,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.toolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(458, 17);
-            this.toolStripStatusLabel1.Spring = true;
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(200, 17);
             this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // toolStripStatusLabel2
@@ -505,19 +512,19 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.toolStripStatusLabel2.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(458, 17);
-            this.toolStripStatusLabel2.Spring = true;
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(420, 17);
             this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // grpBoard
             // 
+            this.grpBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.grpBoard.Controls.Add(this.label2);
             this.grpBoard.Controls.Add(this.label3);
             this.grpBoard.Controls.Add(this.txtWidthmm);
             this.grpBoard.Controls.Add(this.lblWidthmm);
             this.grpBoard.Controls.Add(this.txtHeightmm);
             this.grpBoard.Controls.Add(this.lblHeightmm);
-            this.grpBoard.Location = new System.Drawing.Point(388, 72);
+            this.grpBoard.Location = new System.Drawing.Point(388, 105);
             this.grpBoard.Name = "grpBoard";
             this.grpBoard.Size = new System.Drawing.Size(141, 89);
             this.grpBoard.TabIndex = 33;
@@ -526,6 +533,7 @@
             // 
             // grpOrigin
             // 
+            this.grpOrigin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.grpOrigin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.grpOrigin.Controls.Add(this.label6);
             this.grpOrigin.Controls.Add(this.label5);
@@ -533,7 +541,7 @@
             this.grpOrigin.Controls.Add(this.lblOriginYmm);
             this.grpOrigin.Controls.Add(this.lblOriginXmm);
             this.grpOrigin.Controls.Add(this.txtOriginYmm);
-            this.grpOrigin.Location = new System.Drawing.Point(388, 167);
+            this.grpOrigin.Location = new System.Drawing.Point(388, 200);
             this.grpOrigin.Name = "grpOrigin";
             this.grpOrigin.Size = new System.Drawing.Size(138, 78);
             this.grpOrigin.TabIndex = 32;
@@ -542,55 +550,22 @@
             // 
             // grpSearchReplace
             // 
+            this.grpSearchReplace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.grpSearchReplace.Controls.Add(this.btnReplaceAll);
             this.grpSearchReplace.Controls.Add(this.btnReplace);
             this.grpSearchReplace.Controls.Add(this.btnSearch);
             this.grpSearchReplace.Controls.Add(this.txtReplace);
             this.grpSearchReplace.Controls.Add(this.txtSearch);
-            this.grpSearchReplace.Location = new System.Drawing.Point(245, 603);
+            this.grpSearchReplace.Location = new System.Drawing.Point(245, 616);
             this.grpSearchReplace.Name = "grpSearchReplace";
-            this.grpSearchReplace.Size = new System.Drawing.Size(380, 83);
+            this.grpSearchReplace.Size = new System.Drawing.Size(411, 83);
             this.grpSearchReplace.TabIndex = 34;
             this.grpSearchReplace.TabStop = false;
             this.grpSearchReplace.Text = "Search and replace";
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(6, 19);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(196, 20);
-            this.txtSearch.TabIndex = 0;
-            // 
-            // txtReplace
-            // 
-            this.txtReplace.Location = new System.Drawing.Point(6, 49);
-            this.txtReplace.Name = "txtReplace";
-            this.txtReplace.Size = new System.Drawing.Size(196, 20);
-            this.txtReplace.TabIndex = 1;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(208, 18);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnReplace
-            // 
-            this.btnReplace.Location = new System.Drawing.Point(208, 48);
-            this.btnReplace.Name = "btnReplace";
-            this.btnReplace.Size = new System.Drawing.Size(75, 23);
-            this.btnReplace.TabIndex = 3;
-            this.btnReplace.Text = "Replace";
-            this.btnReplace.UseVisualStyleBackColor = true;
-            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
-            // 
             // btnReplaceAll
             // 
-            this.btnReplaceAll.Location = new System.Drawing.Point(289, 48);
+            this.btnReplaceAll.Location = new System.Drawing.Point(328, 48);
             this.btnReplaceAll.Name = "btnReplaceAll";
             this.btnReplaceAll.Size = new System.Drawing.Size(75, 23);
             this.btnReplaceAll.TabIndex = 4;
@@ -598,11 +573,66 @@
             this.btnReplaceAll.UseVisualStyleBackColor = true;
             this.btnReplaceAll.Click += new System.EventHandler(this.btnReplaceAll_Click);
             // 
+            // btnReplace
+            // 
+            this.btnReplace.Location = new System.Drawing.Point(247, 48);
+            this.btnReplace.Name = "btnReplace";
+            this.btnReplace.Size = new System.Drawing.Size(75, 23);
+            this.btnReplace.TabIndex = 3;
+            this.btnReplace.Text = "Replace";
+            this.btnReplace.UseVisualStyleBackColor = true;
+            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(247, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtReplace
+            // 
+            this.txtReplace.Location = new System.Drawing.Point(6, 49);
+            this.txtReplace.Name = "txtReplace";
+            this.txtReplace.Size = new System.Drawing.Size(234, 20);
+            this.txtReplace.TabIndex = 1;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(6, 19);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(234, 20);
+            this.txtSearch.TabIndex = 0;
+            // 
+            // txtInputFilename
+            // 
+            this.txtInputFilename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtInputFilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInputFilename.Location = new System.Drawing.Point(96, 68);
+            this.txtInputFilename.Name = "txtInputFilename";
+            this.txtInputFilename.Size = new System.Drawing.Size(559, 20);
+            this.txtInputFilename.TabIndex = 35;
+            // 
+            // lblInputFilename
+            // 
+            this.lblInputFilename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblInputFilename.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputFilename.Location = new System.Drawing.Point(18, 72);
+            this.lblInputFilename.Name = "lblInputFilename";
+            this.lblInputFilename.Size = new System.Drawing.Size(78, 13);
+            this.lblInputFilename.TabIndex = 36;
+            this.lblInputFilename.Text = "Input filename:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 716);
+            this.ClientSize = new System.Drawing.Size(666, 738);
+            this.Controls.Add(this.txtInputFilename);
+            this.Controls.Add(this.lblInputFilename);
             this.Controls.Add(this.grpSearchReplace);
             this.Controls.Add(this.grpOrigin);
             this.Controls.Add(this.grpBoard);
@@ -618,8 +648,8 @@
             this.Controls.Add(this.grpGrid);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.txtPath);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtTempfile);
+            this.Controls.Add(this.lblTempFilename);
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
@@ -660,8 +690,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtProcessID;
-        private System.Windows.Forms.TextBox txtPath;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtTempfile;
+        private System.Windows.Forms.Label lblTempFilename;
         private System.Windows.Forms.RichTextBox rtbFileContent;
         private System.Windows.Forms.GroupBox grpGrid;
         private System.Windows.Forms.Button btnSave;
@@ -699,6 +729,8 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtReplace;
         private System.Windows.Forms.Button btnReplaceAll;
+        private System.Windows.Forms.TextBox txtInputFilename;
+        private System.Windows.Forms.Label lblInputFilename;
     }
 }
 
